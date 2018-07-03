@@ -14,7 +14,8 @@ router.beforeEach((to, from, next)=> {
       next()
     } else {
       console.log("write ok");
-      next({path: '/mainIndex'});
+ /*     next({path: '/login'});*/
+      next();
       NProgress.done() // finish progress bar
     }
   }

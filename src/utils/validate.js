@@ -31,6 +31,9 @@ export function validateAlphabets(str) {
   return reg.test(str)
 }
 
+export function validatePassword(str) {
+  return  str.trim().length >= 4  && str.trim().length < 20
+}
 /**
  * validate email
  * @param email

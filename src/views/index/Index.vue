@@ -6,12 +6,12 @@
     <el-menu-item index="4" ><img v-lazy="logoSrc"  style="width: 50px" /></el-menu-item>
     <el-menu-item index="0"  >首页</el-menu-item>
     <el-row type="flex" class="row-bg" justify="end">
-    <el-menu-item index="1" ><el-button type="primary" round>登陆</el-button></el-menu-item>
-    <el-menu-item index="2" ><el-button type="info" round>注册</el-button></el-menu-item>
+    <el-menu-item index="1" ><el-button type="primary" round @click="headClick('login')">登陆</el-button></el-menu-item>
+    <el-menu-item index="2" ><el-button type="info"  round  @click="headClick('register')">注册</el-button></el-menu-item>
     </el-row>
   </el-menu>
 <!--  图片滑动显示, 响应式显示-->
-  <el-carousel :interval="5000" arrow="always" height="carHeight" ref="carousel" >
+  <el-carousel :interval="5000" arrow="always" :height="carHeight" ref="carousel" >
     <el-carousel-item v-for="item in 4" :key="item">
     </el-carousel-item>
   </el-carousel>
@@ -125,7 +125,7 @@
             carHeight:'400px',
             developChart: require("../../assets/index_image/develep-flow.png"),
             logoSrc:require("../../assets/jit.png"),
-            sportLogo :[require("../../assets/index_image/github.png"),
+            sportLogo :[require("../../assets/index_image/zhuoyun.png"),
               require("../../assets/index_image/mybatis.png"),
               require("../../assets/index_image/spring.png"),
               require("../../assets/index_image/vue.png")],
@@ -144,18 +144,28 @@
           // 响应式调整宽度
         var result = window.matchMedia('(max-width: 700px)');
         if (result.matches){
-          this.$refs.carousel.height ="180px";
-          this.$refs.prodCarousel.type = "";
+       /*   this.$refs.carousel.height ="180px";
+          this.$refs.prodCarousel.type = "";*/
+           this.carHeight  = "200px"
 
           console.log("< 700")
         }else{
-          this.$refs.carousel.height ="480px";
+          this.carHeight  = "480px"
           console.log("> 700")
         }
       },
        methods:{
          handleSelect(key, keyPath) {
            console.log(key, keyPath);
+         },
+         headClick(url){
+           if (url == 'login') {
+             this.$router.push({path: '/login'})
+             console.log("in login");
+           }else {
+             this.$router.push({path: '/register'})
+             console.log("in register");
+           }
          }
        }
     }

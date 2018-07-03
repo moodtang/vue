@@ -19,8 +19,8 @@ Vue.use(Element, {
   size: 'medium', // set element-ui default size
 });
 Vue.use(VueLazyload ,{
-  error:  '/static/img/index_image/data.png',
-  loading: '/static/img/index_image/user.png',
+  error:  '/static/img/v-lazy/error.png',
+  loading: '/static/img/v-lazy/loading.png',
 
 });
 

@@ -24,7 +24,7 @@
                   </span>-->
           </el-form-item>
 
-          <el-button type="primary" style="width:100%;margin-bottom:30px;"  :loading="loading">登陆</el-button>
+          <el-button type="primary" style="width:100%;margin-bottom:30px;"  :loading="loading" @click.native.prevent="handleLogin">登陆</el-button>
         </el-form>
       </el-col>
     </el-row>
@@ -71,8 +71,6 @@
     mounted() {
 
       console.log("in this vue");
-
-
 
     }
 

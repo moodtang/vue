@@ -4,8 +4,8 @@ import HelloWorld from '@/components/HelloWorld'
 import Index from '../views/login/Index'
 import NavBar from '../views/index/NavBar'
 import mainIndex from '../views/index/Index'
-/*import Function from '../views/index/Function'*/
-
+import Login from '../views/login/Login'
+import Registr from  '../views/regesiter/register'
 Vue.use(Router)
 
 export default new Router({
@@ -17,8 +17,8 @@ export default new Router({
     },
     {
      path: '/login',
-     name: 'Index',
-      component: Index
+     name: 'Login',
+      component: Login
    },
     {
       path: '/navBar',
@@ -29,6 +29,11 @@ export default new Router({
       path: '/mainIndex',
       name: 'Index',
       component: mainIndex
+    },
+    {
+      path: '/register',
+      name: 'Register',
+      component: Registr
     },
 
   ]
