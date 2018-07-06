@@ -48,6 +48,9 @@
                   </span>
                 </template>
               </el-input>
+
+              <!--滑块验证 -->
+              <confirm  style="margin-top: 10px"></confirm>
               <el-checkbox v-model="checked" class="hidden-sm-and-up"  @change="handleCheckedCitiesChange">允许获取个人信息</el-checkbox>
               <el-button type="primary" class="login-button" ref="loginButton"
                          :disabled="!checked"
@@ -76,9 +79,10 @@
 
   import NavBar from '../../components/GlobalNav/GlobalNav'
   import {isvalidUsername} from '@/utils/validate'
+  import Confirm from  './confirm'
 
   export default {
-    components: {NavBar},
+    components: {NavBar, Confirm},
     name: "Login",
     mounted(){
 /*      console.log(this.$refs.loginButton.disabled);

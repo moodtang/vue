@@ -12,7 +12,9 @@
   </el-menu>
 <!--  图片滑动显示, 响应式显示-->
   <el-carousel :interval="5000" arrow="always" :height="carHeight" ref="carousel" >
-    <el-carousel-item v-for="item in 4" :key="item">
+    <el-carousel-item v-for="item in caImg" :key="item">
+      <img class="carImg" v-lazy= "item"/>
+       <h1>快速加入</h1>
     </el-carousel-item>
   </el-carousel>
   <el-container class="pan-container">
@@ -114,9 +116,10 @@
 
    import 'element-ui/lib/theme-chalk/display.css';
    import Function from './Function.vue';
+   import HelloWorld from "../../components/HelloWorld";
 
     export default {
-      components:{Function},
+      components:{HelloWorld, Function},
         name: "Index",
         data(){
           return {
@@ -129,6 +132,11 @@
               require("../../assets/index_image/mybatis.png"),
               require("../../assets/index_image/spring.png"),
               require("../../assets/index_image/vue.png")],
+            caImg :[require("../../assets/index_image/ca_1.jpg"),
+              require("../../assets/index_image/ca_5_2.png"),
+              require("../../assets/index_image/ca_3.jpg"),
+              require("../../assets/index_image/ca_4.jpg"),
+            ],
             coopTitle:"联系我们",
             coopContent:"    公司地址：重庆市渝北区金州大道西段106号互联网产业园7栋7楼\r\n" +
             "    联系电话: 13996250880 （服务电话）\r\n" +
@@ -140,13 +148,13 @@
 
           }
         },
-      mounted(){
+      computed(){
           // 响应式调整宽度
         var result = window.matchMedia('(max-width: 700px)');
         if (result.matches){
        /*   this.$refs.carousel.height ="180px";
           this.$refs.prodCarousel.type = "";*/
-           this.carHeight  = "200px"
+           this.carHeight  = "180px"
 
           console.log("< 700")
         }else{
@@ -175,6 +183,10 @@
 <style scoped lang="scss">
 
   @import '../../styles/base.scss';
+  .carImg {
+    height: 100%;
+    width: 100%;
+  }
   .el-carousel__item h3 {
     color: #475669;
     font-size: 18px;
@@ -183,11 +195,11 @@
     margin: 0;
   }
   .el-carousel__item:nth-child(2n) {
-    background-color: #4743a2;
+    background-color: rgba(71,67,162,0.5);
       background-size: cover;
   }
   .el-carousel__item:nth-child(2n+1) {
-    background-color: #9fcdff;
+    background-color: rgba(159,205,225,0.5);
   }
   .el-container {
     padding-top: 65px;

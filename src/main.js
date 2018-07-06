@@ -13,7 +13,20 @@ import '@/styles/index.scss' // 用于修改全局样式
 import 'normalize.css/normalize.css'// A modern alternative to CSS resets
 import  VueLazyload from 'vue-lazyload'
 import 'element-ui/lib/theme-chalk/display.css';
+import store from './store'
+import * as filters from './filters' // global filters
+
 Vue.config.productionTip = false;
+
+
+/*
+// register global utility filters. 暂时不是很清楚这个是用来干嘛的
+Object.keys(filters).forEach(key => {
+  Vue.filter(key, filters[key])
+})
+*/
+
+
 
 Vue.use(Element, {
   size: 'medium', // set element-ui default size
@@ -30,6 +43,7 @@ new Vue({
   el: '#app',
   render: h => h(App),
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

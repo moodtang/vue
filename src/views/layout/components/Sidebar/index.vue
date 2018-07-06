@@ -5,9 +5,9 @@
       :show-timeout="200"
       :default-active="$route.path"
       :collapse="isCollapse"
-      background-color="#1c2b36"
+      background-color="#42b983"
       text-color="#ffffff"
-      active-text-color="#42b983"
+      active-text-color="#BBB"
     >
       <sidebar-item :routes="permission_routers"></sidebar-item>
     </el-menu>
@@ -27,10 +27,6 @@ export default {
       'sidebar'
     ]),
     isCollapse() {
-
-      console.log("这是路由里面的sidebar");
-      console.log(this.sidebar);
-      console.log(this.permission_routers);
       return !this.sidebar.opened
     },
   }
