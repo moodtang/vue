@@ -7,19 +7,24 @@
       <line-chart :chart-data="lineChartData"  v-bind:x-axis-data="xAxisData"></line-chart>
     </el-row>
 
-    <el-row  :gutter="32" >
-
+    <el-row  :gutter="32">
       <el-col :xs="24" :sm="24" :lg="12">
         <div class="chart-wrapper">
         <raddar-chart></raddar-chart>
          </div>
       </el-col>
-
-      <el-col :xs="24" :sm="24" :lg="12">
+      <el-col :xs="24" :sm="12" :lg="6">
         <div class="chart-wrapper">
-        <raddar-chart></raddar-chart>
+          <box-card></box-card>
         </div>
       </el-col>
+
+      <el-col :xs="24" :sm="12" :lg="6">
+        <div class="chart-wrapper">
+          <box-card></box-card>
+        </div>
+      </el-col>
+
     </el-row>
 
   </div>
@@ -33,6 +38,7 @@
   import PanelGroup from './components/PanelGroup'
   import LineChart from './components/LineChart'
   import RaddarChart from './components/RaddarChart'
+  import BoxCard from './components/BoxCard'
 
   // 这个数据后期由后台传递生成
 
@@ -57,7 +63,7 @@
 
     export default {
         name: "dashboard",
-      components:{PanelGroup, LineChart, RaddarChart},
+      components:{PanelGroup, LineChart, RaddarChart, BoxCard},
       created(){
           // 此时dom元素还没有被渲染，但是可以找到data中的数据，在此生命周期中初始化data
         for (let i=0; i<7; i++) {
@@ -70,7 +76,8 @@
         return {
           number: 1024,
           lineChartData: lineChartData.newVisitis,
-          xAxisData:[]
+          xAxisData:[],
+
         }
       },
       computed:{
