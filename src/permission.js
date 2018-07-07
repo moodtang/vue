@@ -3,7 +3,9 @@ import store from './store'
 import { Message } from 'element-ui'
 import NProgress from 'nprogress' // progress bar
 import 'nprogress/nprogress.css'// progress bar style
+/*
 import { getToken } from '@/utils/auth' // getToken from cookie
+*/
 
 //  顶端进度条 用来做安全验证，安全过滤
 //permision judge function
@@ -35,7 +37,7 @@ router.beforeEach((to, from, next)=> {
 /*      console.log("write ok");*/
  /*     next({path: '/login'});*/
       next();
-      NProgress.done() // finish progress bar
+  /*    NProgress.done() // finish progress bar*/
     }
   })
 

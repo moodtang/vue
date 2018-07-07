@@ -46,9 +46,6 @@ export default {
       default: false
     }
   },
-  mounted(){
-    console.log(this.routes)
-  },
   methods: {
     hasOneShowingChildren(children) {
       const showingChildren = children.filter(item => {
