@@ -112,7 +112,7 @@ export const constantRouterMap = [
       path: 'index',
       component: () => import('@/views/userCenter/UserCenter'),
       name: 'userCenter',
-      meta: { title: 'UserCenter', icon: 'user', noCache: true }
+      meta: { title: '用户中心', icon: 'peoples', noCache: true }
     }]
   },
 
@@ -120,90 +120,6 @@ export const constantRouterMap = [
 
 export const asyncRouterMap = []
 export default new Router({
-  /*routes: [
-    {
-      path: '',
-      name: 'layout',
-      component: Layout
-    },
-    {
-      path: '/login',
-      name: 'Login',
-      component: Login,
-      hidden: true
-    },
-    {
-      path: '/navBar',
-      name: 'NavBar',
-      component: NavBar,
-      hidden: true
-    },
-    {
-      path: '/mainIndex',
-      name: 'Index',
-      component: mainIndex,
-      hidden: true
-    },
-    {
-      path: '/register',
-      name: 'Register',
-      component: Registr,
-      hidden: true,
 
-    },
-
-    /!*  测试所用伪造数据*!/
-    {
-      path: '/pageOne',
-      redirect: '/PageOne/index',
-      component: Layout,
-      children: [
-        {
-          path: 'index',
-          component: () => import('../components/PageOne'),
-          meta: {
-            title: 'pageTwo',
-            icon: 'documentation',
-            noCache: true
-          }
-        }
-      ]
-    },
-    {
-      path: '/pageTwo',
-      redirect: '/PageTwo/index',
-      component: Layout,
-      children: [
-        {
-          path: 'index',
-          component: () => import('../components/PageTwo'),
-          name: "pageTwo",
-          meta: {
-            title: 'pageTwo',
-            icon: 'documentation',
-            noCache: true
-          }
-        }
-      ]
-    },
-    {
-      path: '/pageThree',
-      redirect: '/PageThree/index',
-      component: Layout,
-      children: [
-        {
-          path: 'index',
-          component: () => import('../components/Three'),
-          name: "pageThree",
-          meta: {
-            title: 'pageThree',
-            icon: 'documentation',
-            noCache: true
-          }
-        }
-      ]
-    }
-
-  ]*/
   routes:constantRouterMap
 })
